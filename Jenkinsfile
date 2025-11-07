@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_COMPOSE_FILE = 'docker-compose.jenkins.yml'
-        GIT_REPO = 'https://github.com/YOUR_USERNAME/devops-assignment-2.git'
+        GIT_REPO = 'https://github.com/W-Bjwa04/devops-assignment-2.git'
     }
     
     stages {
