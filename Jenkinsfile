@@ -74,7 +74,7 @@ pipeline {
         failure {
             echo 'Pipeline failed. Please check the logs.'
             sh """
-                docker-compose -f ${DOCKER_COMPOSE_FILE} logs
+                docker-compose -p part2 -f ${DOCKER_COMPOSE_FILE} logs
             """
         }
         always {
