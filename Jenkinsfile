@@ -21,7 +21,7 @@ pipeline {
                 script {
                     echo 'Stopping existing containers...'
                     sh """
-                        docker-compose -f ${DOCKER_COMPOSE_FILE} down || true
+                        docker-compose -p part2 -f ${DOCKER_COMPOSE_FILE} down || true
                     """
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
                 script {
                     echo 'Building and starting containers...'
                     sh """
-                        docker-compose -f ${DOCKER_COMPOSE_FILE} up -d --build
+                        docker-compose -p part2 -f ${DOCKER_COMPOSE_FILE} up -d --build
                     """
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
                 script {
                     echo 'Verifying containers are running...'
                     sh """
-                        docker-compose -f ${DOCKER_COMPOSE_FILE} ps
+                        docker-compose -p part2 -f ${DOCKER_COMPOSE_FILE} ps
                     """
                 }
             }
